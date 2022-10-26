@@ -6,6 +6,10 @@
     display: none;
 }
 
+.flightLoc {
+    display: inline-block;
+}
+
 .modal {
     display: none;
     position: fixed;

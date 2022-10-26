@@ -19,13 +19,20 @@
             <p>Subscribe</p>
         </div>
     </div>
-    <div class="div">
-        <label for="frominput">From:</label>
-        <input type="text" id="frominput" name="frominput" value="Raleigh">
-        <br>
-        <br>
-        <label for="toinput">To:</label>
-        <input id="toinput" name="toinput" value="Atlanta" list="history">
+
+    <!-- added id='searchbar', removed class='div', added class='container' -->
+    <div id="searchBar" class="container">
+        <!-- added div with class='row' -->
+        <div class="row">
+            <label for="frominput">From:</label>
+            <!-- added class='col-6' -->
+            <input type="text" id="frominput" name="frominput" value="Raleigh" class="col-6">
+            <!-- removed 2 <br> -->
+
+            <label for="toinput" >To:</label>
+            <!-- added class='col-6' -->
+            <input id="toinput" name="toinput" value="Atlanta" list="history" class="col-6">
+        </div>
         <datalist id="history">
             <option> </option>
         </datalist>
@@ -56,6 +63,8 @@
             <a id="bookinglink" href="" target="_blank"></a>
         </div>
     </div>
+
+
     <div id="forecast" class="hide">
             <p id="fivedaytitle"></p>
             <div id="days">
