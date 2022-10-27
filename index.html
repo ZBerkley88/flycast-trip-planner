@@ -12,34 +12,50 @@
   <link rel="stylesheet" href="style.css">
   <title>Flights API Test</title>
 </head>
+
 <body>
+    <!-- added div with id='pageTitle' -->
+    <div id="pageTitle">
+        <h1>Flights API Test</h1>
+    </div>
+    <!-- modal div container -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <p>Subscribe</p>
         </div>
     </div>
-    <div class="div">
-        <label for="frominput">From:</label>
-        <input type="text" id="frominput" name="frominput" value="Raleigh">
-        <br>
-        <br>
-        <label for="toinput">To:</label>
-        <input id="toinput" name="toinput" value="Atlanta" list="history">
+    <!-- added id='searchbar', removed class='div', added class='container row' -->
+    <div id="searchBar" class="container row">
+        <!-- added div with class='searchDiv col-6' -->
+        <div class="searchDiv col-6">
+            <label for="frominput">From:</label>
+            <input type="text" id="frominput" name="frominput" value="Raleigh">
+            <!-- removed 2 <br> -->
+        </div>
+        <!-- added div with class='searchDiv col-6' -->
+        <div class="searchDiv col-6">
+            <label for="toinput" >To:</label>
+            <input id="toinput" name="toinput" value="Atlanta" list="history">
+        </div>
         <datalist id="history">
             <option> </option>
         </datalist>
         <br>
         <br>
-        <label for="departdate">Departure Date:</label>
-        <input type="date" id="departdate" name="dapartdate" value="2022-10-30">
-        <br>
-        <br>
-        <!--<p></p>
-        <input type="date" id="returndate" name="returndate" value="2022-11-05">
-        <br>-->
-        <label for="adults">Number of Adults:</label>
-        <input type="text" id="adults" name="adults" value="2">
+    <!-- added id='travelDate', added class='container row' -->
+    <div id="travelDate" class="container row">
+        <!-- added div with class='calendarDiv col-6' -->
+        <div class="calendarDiv col-6">
+            <label for="departdate">Departure Date:</label>
+            <input type="date" id="departdate" name="dapartdate" value="2022-10-30">
+            <br>
+            <br>
+            <!--<p></p>
+            <input type="date" id="returndate" name="returndate" value="2022-11-05">
+            <br>-->
+            <label for="adults">Number of Adults:</label>
+            <input type="text" id="adults" name="adults" value="2">
         <br>
         <br>
         <label for="children">Number of Children:</label>
@@ -56,6 +72,8 @@
             <a id="bookinglink" href="" target="_blank"></a>
         </div>
     </div>
+
+
     <div id="forecast" class="hide">
             <p id="fivedaytitle"></p>
             <div id="days">
