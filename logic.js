@@ -173,14 +173,23 @@ async function getWeather() {
     localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
     var searches = JSON.parse(window.localStorage.getItem('savedSearches')) || [];
     console.log(searches);
+    var uniquesearches = [];
+    var unique = searches.filter(element => {
+        var isDuplicate = uniquesearches.includes(element.name);
+        if (!isDuplicate) {
+            uniquesearches.push(element.name);
+            return true;
+        }
+        return false;
+    });
     var optionsToDelete = document.querySelectorAll("option");
     console.log(optionsToDelete);
     for (i = 0; i < optionsToDelete.length; i++) {
         optionsToDelete[i].parentNode.removeChild(optionsToDelete[i])
     }
-    for (var i = 0; i < searches.length; i++) {
+    for (var i = 0; i < unique.length; i++) {
         var option = document.createElement('option');
-        option.textContent = searches[i].name;
+        option.textContent = unique[i].name;
         var div = document.getElementById('history');
         div.appendChild(option);
     }
