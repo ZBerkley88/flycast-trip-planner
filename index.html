@@ -38,34 +38,55 @@
             <label for="toinput" >To:</label>
             <input id="toinput" name="toinput" value="Atlanta" list="history">
         </div>
-        <datalist id="history">
-            <option> </option>
-        </datalist>
-        <br>
-        <br>
+    </div>
+
+    <datalist id="history">
+        <option> </option>
+    </datalist>
+    <!-- Josh is emotionally attached to these break tags -->
+    <!-- <br> -->
+    <!-- <br> -->
     <!-- added id='travelDate', added class='container row' -->
     <div id="travelDate" class="container row">
         <!-- added div with class='calendarDiv col-6' -->
         <div class="calendarDiv col-6">
             <label for="departdate">Departure Date:</label>
             <input type="date" id="departdate" name="dapartdate" value="2022-10-30">
-            <br>
-            <br>
-            <!--<p></p>
+        </div>
+        <!-- added div with class='calendarDiv col-6' -->
+        <div class="calendarDiv col-6">
+            <label for="departdate">Return Date:</label>
             <input type="date" id="returndate" name="returndate" value="2022-11-05">
-            <br>-->
+        </div>   
+            <!-- <br> -->
+            <!-- <br> -->
+            <!--<p></p>  -->
+        <div class="passengerDiv col-3">
             <label for="adults">Number of Adults:</label>
             <input type="text" id="adults" name="adults" value="2">
-        <br>
-        <br>
-        <label for="children">Number of Children:</label>
-        <input type="text" id="children" name="children" value="1">
-        <br>
-        <br>
-        <!--<input type="text" id="infants" name="infants" value="0">
-        <input type="text" id="cabinclass" name="cabinclass" value="Economy">
-        <input type="text" id="currency" name="currency" value="USD">-->
-        <input type="submit" id="submitbtn" value="Submit">
+        </div>
+        <!-- <br> -->
+        <!-- <br> -->
+        <div class="passengerDiv col-3">
+            <label for="children">Number of Children:</label>
+            <input type="text" id="children" name="children" value="1">
+        </div>
+
+        <div class="passengerDiv col-3">
+            <label for="infant">Number of Infants:</label>
+            <input type="text" id="infants" name="infants" value="0">
+        </div>
+    </div>
+
+        <!-- <br> -->
+        <!-- <br> -->
+        <!-- <input type="text" id="cabinclass" name="cabinclass" value="Economy"> -->
+        <!-- <input type="text" id="currency" name="currency" value="USD"> -->
+
+        <div class="submitDiv col-6">
+            <input type="submit" id="submitbtn" value="Submit">
+        </div>
+
         <div id="flightsdiv">
             <p id="fromairport"></p>
             <p id="price"></p>
@@ -73,45 +94,42 @@
         </div>
     </div>
 
-
+<!-- weather forecast for the user's arrival city -->
     <div id="forecast" class="hide container">
-            <p id="fivedaytitle"></p>
+            <h2 id="fivedaytitle">5-Day Forecast</h2>
             <div id="days" class="row">
-            <div class="fiveday col-md">
-                <p class="forecastdate" id="todayplusone"></p>
-                <p id="onetemp"></p>
-                <p id="onehumid"></p>
-                <p id="onewind"></p>
-            </div>
-            <div class="fiveday col-md">
-                <p class="forecastdate" id="todayplustwo"></p>
-                <p id="twotemp"></p>
-                <p id="twohumid"></p>
-                <p id="twowind"></p>
-            </div>
-            <div class="fiveday col-md">
-                <p class="forecastdate" id="todayplusthree"></p>
-                <p id="threetemp"></p>
-                <p id="threehumid"></p>
-                <p id="threewind"></p>
-            </div>
-            <div class="fiveday col-md">
-                <p class="forecastdate" id="todayplusfour"></p>
-                <p id="fourtemp"></p>
-                <p id="fourhumid"></p>
-                <p id="fourwind"></p>
-            </div>
-            <div class="fiveday col-md">
-                <p class="forecastdate" id="todayplusfive"></p>
-                <p id="fivetemp"></p>
-                <p id="fivehumid"></p>
-                <p id="fivewind"></p>
-            </div>
+                <div class="fiveday col-md">
+                    <p class="forecastdate" id="todayplusone"></p>
+                    <p id="onetemp"></p>
+                    <p id="onehumid"></p>
+                    <p id="onewind"></p>
+                </div>
+                <div class="fiveday col-md">
+                    <p class="forecastdate" id="todayplustwo"></p>
+                    <p id="twotemp"></p>
+                    <p id="twohumid"></p>
+                    <p id="twowind"></p>
+                </div>
+                <div class="fiveday col-md">
+                    <p class="forecastdate" id="todayplusthree"></p>
+                    <p id="threetemp"></p>
+                    <p id="threehumid"></p>
+                    <p id="threewind"></p>
+                </div>
+                <div class="fiveday col-md">
+                    <p class="forecastdate" id="todayplusfour"></p>
+                    <p id="fourtemp"></p>
+                    <p id="fourhumid"></p>
+                    <p id="fourwind"></p>
+                </div>
+                <div class="fiveday col-md">
+                    <p class="forecastdate" id="todayplusfive"></p>
+                    <p id="fivetemp"></p>
+                    <p id="fivehumid"></p>
+                    <p id="fivewind"></p>
+                </div>
             </div>
         </div>
-
-
-
 
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
