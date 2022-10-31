@@ -1,6 +1,6 @@
 async function getflight() {
     console.log("the click worked");
-    var apikey = "63586b5d9b2ba32332d8eed0";
+    var apikey = "636050a93b568e20f883843e";
     var frominput = document.querySelector("#frominput").value.trim();
     var toinput = document.querySelector("#toinput").value.trim();
     var departureDate = document.querySelector("#departdate").value.trim();
@@ -27,6 +27,7 @@ async function getflight() {
     https: var getFlight = "https://api.flightapi.io/onewaytrip/"+apikey+"/"+fromIATA+"/"+toIATA+"/"+departureDate+"/"+numberAdults+"/"+numberChildren+"/0/Economy/USD";
     var response = await fetch(getFlight)
     var result = await response.json();
+    console.log(result.fares[0].tripId);
     var tripId = result.fares[0].tripId;
     //Departure Airport
     var fromAirport = document.getElementById("fromairport");
@@ -64,6 +65,8 @@ async function getflight() {
 
 function fivedaydates() {
     //var tDate = moment().local().format("ddd, MMM Do");
+    var flightInfo = document.getElementById("flightsdiv");
+    flightInfo.style.display = "block";
     $("#todayplusone").text(moment().add(1,'days').local().format("ddd, MMM Do"))
     $("#todayplustwo").text(moment().add(2,'days').local().format("ddd, MMM Do"))
     $("#todayplusthree").text(moment().add(3,'days').local().format("ddd, MMM Do"))
