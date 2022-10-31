@@ -32,10 +32,11 @@
 }
   
 .close {
-    color: #aaa;
     float: right;
+    color: #aaa;
     font-size: 28px;
     font-weight: bold;
+    /* figure out way to get 'X'in top right corner */
 }
   
 .close:hover,
