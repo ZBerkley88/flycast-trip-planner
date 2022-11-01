@@ -149,6 +149,9 @@
   
   img {
     border-style: none;
+    /* centered weather icons */
+    align-content: center;
+    padding: 5px;
   }
   
   /* Forms
