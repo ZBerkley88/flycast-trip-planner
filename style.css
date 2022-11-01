@@ -400,6 +400,7 @@ body{
     margin: auto;
     color: var(--primaryFontcolor);
     display: none;
+    text-align: center;
 }
 
 #input, #toinput, #departdate, #adults, #children {
