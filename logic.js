@@ -1,7 +1,7 @@
 async function getflight() {
     console.log("If you're reading this, the button worked.");
     //API key from flightapi.io, 100 calls per key
-    var apikey = "63613d38e750be20e3895e8b";
+    var apikey = "636050a93b568e20f883843e";
     //Grab inputs from DOM
     var frominput = document.querySelector("#frominput").value.trim();
     var toinput = document.querySelector("#toinput").value.trim();
