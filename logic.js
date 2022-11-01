@@ -83,11 +83,11 @@ function fivedaydates() {
     //var tDate = moment().local().format("ddd, MMM Do");
     var flightInfo = document.getElementById("flightsdiv");
     flightInfo.style.display = "block";
-    $("#todayplusone").text(moment().add(1,'days').local().format("ddd, MMM Do"))
-    $("#todayplustwo").text(moment().add(2,'days').local().format("ddd, MMM Do"))
-    $("#todayplusthree").text(moment().add(3,'days').local().format("ddd, MMM Do"))
-    $("#todayplusfour").text(moment().add(4,'days').local().format("ddd, MMM Do"))
-    $("#todayplusfive").text(moment().add(5,'days').local().format("ddd, MMM Do"))
+    $("#todayplusone").text(moment().add(1,'days').local().format("ddd, MMM Do"));
+    $("#todayplustwo").text(moment().add(2,'days').local().format("ddd, MMM Do"));
+    $("#todayplusthree").text(moment().add(3,'days').local().format("ddd, MMM Do"));
+    $("#todayplusfour").text(moment().add(4,'days').local().format("ddd, MMM Do"));
+    $("#todayplusfive").text(moment().add(5,'days').local().format("ddd, MMM Do"));
 }
 //Get weather from openweathermap API
 async function getWeather() {
@@ -128,7 +128,7 @@ async function getWeather() {
     document.getElementById("todayplusone").appendChild(img);
     document.getElementById("onetemp").textContent = tempround + "°F";
     document.getElementById("onehumid").textContent = humidity + "% Humidity";
-    document.getElementById("onewind").textContent = windround + "mph Winds";
+    document.getElementById("onewind").textContent = windround + " MPH Winds";
 //Two days out
     var twodays = forecast[1];
     var icon = twodays.weather[0].icon;
@@ -142,7 +142,7 @@ async function getWeather() {
     document.getElementById("todayplustwo").appendChild(img);
     document.getElementById("twotemp").textContent = tempround + "°F";
     document.getElementById("twohumid").textContent = humidity + "% Humidity";
-    document.getElementById("twowind").textContent = windround + "mph Winds";
+    document.getElementById("twowind").textContent = windround + " MPH Winds";
 //Three days out
     var threedays = forecast[2];
     var {temp} = threedays.main;
@@ -155,7 +155,7 @@ async function getWeather() {
     document.getElementById("todayplusthree").appendChild(img);
     document.getElementById("threetemp").textContent = tempround + "°F";
     document.getElementById("threehumid").textContent = humidity + "% Humidity";
-    document.getElementById("threewind").textContent = windround + "mph Winds";
+    document.getElementById("threewind").textContent = windround + " MPH Winds";
 //Four days out 
     var fourdays = forecast[3];
     var {temp} = fourdays.main;
@@ -168,7 +168,7 @@ async function getWeather() {
     document.getElementById("todayplusfour").appendChild(img);
     document.getElementById("fourtemp").textContent = tempround + "°F";
     document.getElementById("fourhumid").textContent = humidity + "% Humidity";
-    document.getElementById("fourwind").textContent = windround + "mph Winds";
+    document.getElementById("fourwind").textContent = windround + " MPH Winds";
 //Five days out
     var fivedays = forecast[4];
     var {temp} = fivedays.main;
@@ -181,7 +181,7 @@ async function getWeather() {
     document.getElementById("todayplusfive").appendChild(img);
     document.getElementById("fivetemp").textContent = tempround + "°F";
     document.getElementById("fivehumid").textContent = humidity + "% Humidity";
-    document.getElementById("fivewind").textContent = windround + "mph Winds";
+    document.getElementById("fivewind").textContent = windround + " MPH Winds";
     document.getElementById("forecast").classList.remove("hide");
     //Save To location searches to local storage
     var savedSearches = JSON.parse(localStorage.getItem("savedSearches")) || [];
