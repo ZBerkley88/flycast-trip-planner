@@ -31,14 +31,14 @@
         <div id="searchBar" class="container row">
         <!-- added div with class='searchDiv col-6' -->
             <div class="searchDiv col-6">
-            <label for="frominput">From:</label>
-            <input type="text" id="frominput" name="frominput" value="Raleigh">
+                <label for="frominput">From:</label>
+                <input type="text" id="frominput" name="frominput" value="Raleigh">
             <!-- removed 2 <br> -->
-        </div>
+            </div>
         <!-- added div with class='searchDiv col-6' -->
             <div class="searchDiv col-6">
-            <label for="toinput" >To:</label>
-            <input id="toinput" name="toinput" value="Atlanta" list="history">
+                <label for="toinput" >To:</label>
+                <input id="toinput" name="toinput" value="Atlanta" list="history">
             </div>
             <datalist id="history">
                 <option> </option>
@@ -47,33 +47,42 @@
             <br>
 
     <!-- added id='travelDate', added class='container row' -->
-    <div id="travelDate" class="container row">
+        <div id="travelDate" class="container row">
             <!-- added div with class='calendarDiv col-6' -->
             <div class="calendarDiv col-6">
                 <label for="departdate">Departure Date:</label>
-            <input type="date" id="departdate" name="dapartdate" value="2022-10-30">
-                <br>
-                <br>
-                <!--<p></p>
-                <input type="date" id="returndate" name="returndate" value="2022-11-05">
-                <br>-->
+                <input type="date" id="departdate" name="dapartdate" value="2022-11-30">
+            </div>
+                <!-- <br>
+                <br> -->
             <div class="calendarDiv col-6">
+                <label for="returndate">Return Date:</label>
+                <input type="date" id="returndate" name="returndate" value="2022-12-05">
+            </div>
+        </div>
+
+        <br>
+        <br>
+        
+        <div id="passengers" class="container row">
+            <div class="passengerDiv col-4">
+                <!-- <br> -->
                 <label for="adults">Number of Adults:</label>
                 <input type="text" id="adults" name="adults" value="2">
             </div>
-
-            <br>
-            <br>
-            <div class="calendarDiv col-6">
-            <label for="children">Number of Children:</label>
-            <input type="text" id="children" name="children" value="1">
-            <br>
-            <br>
+            <!-- <br> -->
+            <!-- <br> -->
+            <div class="passengerDiv col-4">
+                <label for="children">Number of Children:</label>
+                <input type="text" id="children" name="children" value="1">
             </div>
-            <!--<input type="text" id="infants" name="infants" value="0">
-            <input type="text" id="cabinclass" name="cabinclass" value="Economy">
-            <input type="text" id="currency" name="currency" value="USD">-->
-            <input type="submit" id="submitbtn" value="Submit">
+        </div>
+            <!-- <br> -->
+            <!-- <br> -->
+            <!-- <input type="text" id="infants" name="infants" value="0"> -->
+            <!-- <input type="text" id="cabinclass" name="cabinclass" value="Economy"> -->
+            <!-- <input type="text" id="currency" name="currency" value="USD">-->
+            <!-- <input type="submit" id="submitbtn" value="Submit"> -->
             
     </section>
 
