@@ -29,7 +29,7 @@ n/a
 [Zachary Berkley](https://github.com/ZBerkley88)<br>
 [Josh Icard](https://github.com/jicard)<br>
 [Madalyn Marino](https://github.com/madalynmm)<br>
-[Shawn T](https://github.com/LightintheBulb)
+[Shawn Thomas](https://github.com/LightintheBulb)
 
 ## License
 
