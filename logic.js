@@ -33,6 +33,7 @@ async function getflight() {
     https: var getFlight = "https://api.flightapi.io/onewaytrip/"+apikey+"/"+fromIATA+"/"+toIATA+"/"+departureDate+"/"+numberAdults+"/"+numberChildren+"/0/Economy/USD";
     var response = await fetch(getFlight)
     var result = await response.json();
+    console.log(result.fares[0].tripId);
     var tripId = result.fares[0].tripId;
     //Departure Airport
     //Returns the airline of fares[0], or returns Airplane Airlines if id wasn't found
@@ -72,6 +73,8 @@ async function getflight() {
 //Use moment to add days to weather forecast
 function fivedaydates() {
     //var tDate = moment().local().format("ddd, MMM Do");
+    var flightInfo = document.getElementById("flightsdiv");
+    flightInfo.style.display = "block";
     $("#todayplusone").text(moment().add(1,'days').local().format("ddd, MMM Do"))
     $("#todayplustwo").text(moment().add(2,'days').local().format("ddd, MMM Do"))
     $("#todayplusthree").text(moment().add(3,'days').local().format("ddd, MMM Do"))
