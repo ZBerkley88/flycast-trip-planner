@@ -195,6 +195,16 @@ async function getWeather() {
     var searches = JSON.parse(window.localStorage.getItem('savedSearches')) || [];
     console.log(searches);
     //Remove duplicates from search history
+    var uniquesearches = [];
+    var unique = searches.filter(element => {
+        var isDuplicate = uniquesearches.includes(element.name);
+        if (!isDuplicate) {
+            uniquesearches.push(element.name);
+            return true;
+        }
+        return false;
+    });
+    console.log(unique);
     var optionsToDelete = document.querySelectorAll("option");
     console.log(optionsToDelete);
     for (i = 0; i < optionsToDelete.length; i++) {
