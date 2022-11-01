@@ -1,35 +1,42 @@
 async function getflight() {
-    console.log("the click worked");
-    var apikey = "636050a93b568e20f883843e";
+    console.log("If you're reading this, the button worked.");
+    //API key from flightapi.io, 100 calls per key
+    var apikey = "63586b5d9b2ba32332d8eed0";
+    //Grab inputs from DOM
     var frominput = document.querySelector("#frominput").value.trim();
     var toinput = document.querySelector("#toinput").value.trim();
     var departureDate = document.querySelector("#departdate").value.trim();
     var numberAdults = document.querySelector("#adults").value.trim();
     var numberChildren = document.querySelector("#children").value.trim();
+    //Console log from and to, to ensure correct input was grabbed
     console.log("From " + frominput);
     console.log("To " + toinput);
     //"https://api.flightapi.io/place/api-key/london"
-    //From location
+    //First API call to get the IATA (International Air Transport Association) data for the From location
     https: var getFrom = "https://api.flightapi.io/iata/"+apikey+"?name="+frominput+"&type=airport";
     var response = await fetch(getFrom)
     var result = await response.json();
     console.log(result);
     console.log(result.data[0].fs + " is the IATA of the To location");
     var fromIATA = result.data[0].fs;
-    //To location
+    //Second API call to get the IATA data for the TO location
     https: var getTo = "https://api.flightapi.io/iata/"+apikey+"?name="+toinput+"&type=airport";
     var response = await fetch(getTo)
     var result = await response.json();
     console.log(result);
     console.log(result.data[0].fs + " is the IATA of the From location");
     var toIATA = result.data[0].fs;
+    //API format
     //https://api.flightapi.io/roundtrip/YOURAPIKEY/LHR/LAX/2019-10-11/2019-10-15/2/0/1/Economy/USD
+    //API call to get flight info based on user input
+    //Default to 0 infants, Economy class, and USD for ease of use
     https: var getFlight = "https://api.flightapi.io/onewaytrip/"+apikey+"/"+fromIATA+"/"+toIATA+"/"+departureDate+"/"+numberAdults+"/"+numberChildren+"/0/Economy/USD";
     var response = await fetch(getFlight)
     var result = await response.json();
     console.log(result.fares[0].tripId);
     var tripId = result.fares[0].tripId;
     //Departure Airport
+    //Returns the airline of fares[0], or returns Airplane Airlines if id wasn't found
     var fromAirport = document.getElementById("fromairport");
     if (tripId.includes("G4")) {
         fromAirport.textContent = "Allegiant Air LLC"
@@ -51,18 +58,19 @@ async function getflight() {
         fromAirport.textContent = "United Airlines"
     } else fromAirport.textContent = "Airplane Airlines";
     console.log(fromAirport.textContent);
-    //Price
+    //Flight price
     var flightInfoDiv = document.getElementById("price");
     var flightPrice = result.fares[0].price.totalAmount;
     flightInfoDiv.textContent = ("$" + flightPrice);
     console.log("$" + flightPrice)
-    //Link
+    //Link to booking site, actual booking
     var flightLink = document.getElementById("bookinglink");
     flightLink.href = result.fares[0].handoffUrl;
     flightLink.textContent = "Booking Site";
     console.log(result.fares[0].handoffUrl);
 }
 
+//Use moment to add days to weather forecast
 function fivedaydates() {
     //var tDate = moment().local().format("ddd, MMM Do");
     var flightInfo = document.getElementById("flightsdiv");
@@ -73,17 +81,17 @@ function fivedaydates() {
     $("#todayplusfour").text(moment().add(4,'days').local().format("ddd, MMM Do"))
     $("#todayplusfive").text(moment().add(5,'days').local().format("ddd, MMM Do"))
 }
-
+//Get weather from openweathermap API
 async function getWeather() {
-    console.log("The click worked");
     var images = document.getElementsByTagName("img");
-    //var i;
+    //for loop to remove previous search icon imgs
     for(i = 0; i < images.length; i++) {
         images[i].classList.add("hide");
     }
     var apikey = "f35f15ca2adc937d3e6afe2f22b4ba44";
+    //Grab To input from DOM
     var searchInput = document.querySelector("#toinput").value.trim();
-//Coordinates
+//Lat/Lon coordinates for To location
     https: var getCoordinates = "https://api.openweathermap.org/geo/1.0/direct?q="+searchInput+"&appid=f35f15ca2adc937d3e6afe2f22b4ba44&units=metric";
     var coordinateData = await fetch(getCoordinates);
     var data = await coordinateData.json();
@@ -91,14 +99,15 @@ async function getWeather() {
     var coordinates = data[0];
     var {lat, lon} = coordinates;
     var {name, state} = coordinates;
+//Get 5 day forecast data
     https: var forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=f35f15ca2adc937d3e6afe2f22b4ba44&units=imperial&cnt=5";
     var response = await fetch(forecastUrl)
     var result = await response.json()
     var resultarray = Object.values(result);
     var forecast = resultarray[3];
-    console.log("IM RIGHT HERE");
     console.log(forecast);
     //One day out
+    //Delcare variables, round numbers with insignificant decimals, add weather icon as img element, display data on page
     var oneday = forecast[0];
     var icon = oneday.weather[0].icon;
     var {temp} = oneday.main;
@@ -166,6 +175,7 @@ async function getWeather() {
     document.getElementById("fivehumid").textContent = humidity + "% Humidity";
     document.getElementById("fivewind").textContent = windround + "mph Winds";
     document.getElementById("forecast").classList.remove("hide");
+    //Save To location searches to local storage
     var savedSearches = JSON.parse(localStorage.getItem("savedSearches")) || [];
     var searchedCity = name;
     var searchedObject = {
@@ -176,15 +186,7 @@ async function getWeather() {
     localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
     var searches = JSON.parse(window.localStorage.getItem('savedSearches')) || [];
     console.log(searches);
-    var uniquesearches = [];
-    var unique = searches.filter(element => {
-        var isDuplicate = uniquesearches.includes(element.name);
-        if (!isDuplicate) {
-            uniquesearches.push(element.name);
-            return true;
-        }
-        return false;
-    });
+    //Remove duplicates from search history
     var optionsToDelete = document.querySelectorAll("option");
     console.log(optionsToDelete);
     for (i = 0; i < optionsToDelete.length; i++) {
@@ -199,7 +201,7 @@ async function getWeather() {
     var searchInput = document.querySelector("#toinput");
     searchInput.value = "";
 }
-
+//Show and hide modal
 function showModal() {
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
