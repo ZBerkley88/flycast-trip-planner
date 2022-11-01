@@ -209,11 +209,20 @@ span.onclick = function() {
 */
 
 function showModal() {
-    var myModal = document.getElementById('myModal');
-    myModal.setAttribute('data-toggle', 'modal');
-    myModal.setAttribute('data-target', '#myModal');
+    myModal.style.display = "block";
+    console.log('my modal is showing up');
 }
+
+function closeModal() {
+    myModal.style.display = "none";
+    console.log("close function working");
+}
+    
 
 //Submit button onclick events
 var searchButton = document.querySelector("#submitbtn");
 searchButton.addEventListener("click", () => {getflight(); getWeather(); fivedaydates(); showModal();});
+
+var myModal = document.getElementById('myModal');
+var modalClose = document.querySelector('close');
+modalClose.addEventListener("click", closeModal);

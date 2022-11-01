@@ -30,18 +30,3 @@
     border: 1px solid #888;
     width: 80%;
 }
-  
-.close {
-    float: right;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    /* figure out way to get 'X'in top right corner */
-}
-  
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
