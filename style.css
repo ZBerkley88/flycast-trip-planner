@@ -40,6 +40,8 @@
   h1 {
     font-size: 2em;
     margin: 0.67em 0;
+    /* centered page title */
+    text-align: center;
   }
   
   /* Grouping content
@@ -176,6 +178,7 @@
   button,
   input { /* 1 */
     overflow: visible;
+    margin-top: 15px; 
   }
   
   /**
@@ -423,3 +426,4 @@ body{
 .flightLoc {
     display: inline-block;
 }
+
