@@ -8,7 +8,7 @@ Two APIs are utilized in this web app: [Flight API](https://api.flightapi.io) an
 
 Link: [Project 1](https://zberkley88.github.io/project-1-tentative-name/)
 
-![Project 1 Screenshot](./)
+![Project 1 Screenshot](./assets/images/Screenshot_20221101_061308.png)
 
 
 ## Challenges
