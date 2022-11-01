@@ -202,32 +202,6 @@ async function getWeather() {
     searchInput.value = "";
 }
 
-/*
-function showModal() {
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close")[0];
-modal.style.display = "block";
-span.onclick = function() {
-  modal.style.display = "none";
-}
-}
-*/
-
-function showModal() {
-    myModal.style.display = "block";
-    console.log('my modal is showing up');
-}
-
-function closeModal() {
-    myModal.style.display = "none";
-    console.log("close function working");
-}
-    
-
 //Submit button onclick events
 var searchButton = document.querySelector("#submitbtn");
-searchButton.addEventListener("click", () => {getflight(); getWeather(); fivedaydates(); showModal();});
-
-var myModal = document.getElementById('myModal');
-var modalClose = document.querySelector('close');
-modalClose.addEventListener("click", closeModal);
+searchButton.addEventListener("click", () => {getflight(); getWeather(); fivedaydates();});
