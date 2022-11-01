@@ -1,4 +1,4 @@
-# PROJECT 1 TITLE: PLEASE REMEMBER TO CHANGE THIS 
+# FLYCAST TRIP PLANNER
 
 ## Description
 
@@ -8,7 +8,7 @@ Two APIs are utilized in this web app: [Flight API](https://api.flightapi.io) an
 
 Link: [Project 1](https://zberkley88.github.io/project-1-tentative-name/)
 
-![Project 1 Screenshot](./)
+![Project 1 Screenshot](/screenshot.png)
 
 
 ## Challenges
