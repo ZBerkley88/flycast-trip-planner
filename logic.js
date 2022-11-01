@@ -197,6 +197,7 @@ async function getWeather() {
     searchInput.value = "";
 }
 
+/*
 function showModal() {
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
@@ -204,20 +205,15 @@ modal.style.display = "block";
 span.onclick = function() {
   modal.style.display = "none";
 }
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
+}
+*/
+
+function showModal() {
+    var myModal = document.getElementById('myModal');
+    myModal.setAttribute('data-toggle', 'modal');
+    myModal.setAttribute('data-target', '#myModal');
 }
 
 //Submit button onclick events
 var searchButton = document.querySelector("#submitbtn");
 searchButton.addEventListener("click", () => {getflight(); getWeather(); fivedaydates(); showModal();});
-
-
-/*Onload events
-window.onload = function() {
-    showModal();
-}
-*/
