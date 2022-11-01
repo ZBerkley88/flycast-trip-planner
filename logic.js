@@ -1,7 +1,7 @@
 async function getflight() {
     console.log("If you're reading this, the button worked.");
     //API key from flightapi.io, 100 calls per key
-    var apikey = "63586b5d9b2ba32332d8eed0";
+    var apikey = "63613d38e750be20e3895e8b";
     //Grab inputs from DOM
     var frominput = document.querySelector("#frominput").value.trim();
     var toinput = document.querySelector("#toinput").value.trim();
@@ -57,7 +57,9 @@ async function getflight() {
     } else if (tripId.includes("UA")) {
         fromAirport.textContent = "United Airlines"
     } else fromAirport.textContent = "Airplane Airlines";
-    console.log(fromAirport.textContent);
+    
+    var airlineResult = fromAirport.textContent;
+    console.log(airlineResult);
     //Flight price
     var flightInfoDiv = document.getElementById("price");
     var flightPrice = result.fares[0].price.totalAmount;
@@ -65,9 +67,14 @@ async function getflight() {
     console.log("$" + flightPrice)
     //Link to booking site, actual booking
     var flightLink = document.getElementById("bookinglink");
-    flightLink.href = result.fares[0].handoffUrl;
-    flightLink.textContent = "Booking Site";
-    console.log(result.fares[0].handoffUrl);
+    var bookingUrl = result.fares[0].handoffUrl;
+    flightLink.href = bookingUrl;
+    console.log(bookingUrl);
+    //Modal Deal Contend and Choose Flight Button
+    var bestDeal = document.getElementById("bestDealInfo");
+    bestDeal.textContent = (airlineResult + " at $" + flightPrice);
+    var chooseFlightBtn = document.getElementById("chooseFlightBtn");
+    chooseFlightBtn.setAttribute("href", bookingUrl);
 }
 
 //Use moment to add days to weather forecast
