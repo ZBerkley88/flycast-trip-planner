@@ -11,6 +11,7 @@ async function getflight() {
     //Console log from and to, to ensure correct input was grabbed
     console.log("From " + frominput);
     console.log("To " + toinput);
+    document.getElementById("cityName").textContent = toinput;
     //"https://api.flightapi.io/place/api-key/london"
     //First API call to get the IATA (International Air Transport Association) data for the From location
     https: var getFrom = "https://api.flightapi.io/iata/"+apikey+"?name="+frominput+"&type=airport";
