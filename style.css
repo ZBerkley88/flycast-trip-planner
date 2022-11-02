@@ -389,6 +389,7 @@ body{
     background-color: var(--inputsectionBkgcolor);
     width: 90%;
     margin: auto;
+    opacity: 0.8;
 }
 
 #flightsdiv {
@@ -431,3 +432,7 @@ body{
     display: inline-block;
 }
 
+body {
+  background-image: url(./Assets/shutterstock_186964970-scaled.webp);
+  background-size: cover;
+}
