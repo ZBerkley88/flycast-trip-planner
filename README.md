@@ -8,7 +8,7 @@ Two APIs are utilized in this web app: [Flight API](https://api.flightapi.io) an
 
 Link: [Project 1](https://zberkley88.github.io/flycast-trip-planner/)
 
-![Project 1 Screenshot](/screenshot.png)
+![Project 1 Screenshot](./Screenshot-updated.png)
 
 
 ## Challenges

@@ -379,6 +379,7 @@ body{
     font-family: var(--primaryFont);
     font-weight:;
     background-color: var(--primaryBkgcolor);
+    color:#ffffff;
 }
 
 
